@@ -6,7 +6,7 @@
 #include <stdio.h>
 
 #define MINHEIGHT 1
-#define MAXHEIGHT 10
+#define MAXHEIGHT 15
 
 typedef short int16_t;
 typedef short pole_t[MAXHEIGHT];
@@ -22,7 +22,7 @@ int16_t pole1_h, pole2_h, pole3_h;
 int16_t get_height()
 {
 	while ((height < MINHEIGHT) || (height % 1 != 0) || (height > MAXHEIGHT)) {
-		printf("\nEnter your tower height, please enter an integer value no less than 1 and no more than 10: ");
+		printf("\nEnter your tower height, please enter an integer value no less than %d and no more than %d: ", MINHEIGHT, MAXHEIGHT);
 		scanf(" %d", &height);
 		if ((height < MINHEIGHT) || (height % 1 != 0) || (height > MAXHEIGHT)) {
 			printf("Tower height number invalid, please try again\n");
@@ -30,7 +30,7 @@ int16_t get_height()
 		else
 			break;
 	}
-
+	 
 	return height;
 }
 
